@@ -155,15 +155,15 @@ class Window(tk.Tk):
 
         if mode == 1:
             mode1_ans = data['cur_price'] * data['num_stock']
-            output_label = tk.Label(self.fr4, text="You need to pay: {}".format(mode1_ans))
+            output_label = tk.Label(self.fr4, text="You need to pay ${}".format(mode1_ans))
             output_label.grid(column=0, row=0, sticky=self.align_mode)
 
         elif mode == 2:
             mode2_ans = StockFunction.calc_avg_price(data['avg_price'], data['num_stock'], data['cur_price'], data['num_buy_stock'])
             mode2_pay = data['cur_price'] * data['num_buy_stock']
-            output_label = tk.Label(self.fr4, text="You need to pay: {}".format(mode2_pay), anchor=tk.NE)
+            output_label = tk.Label(self.fr4, text="You need to pay ${}".format(round(mode2_pay, 2)), anchor=tk.NE)
             output_label.grid(column=0, row=0, sticky=self.align_mode)
-            output_labe2 = tk.Label(self.fr4, text="Final average price: {}".format(mode2_ans), anchor=tk.NE)
+            output_labe2 = tk.Label(self.fr4, text="Final average price: {}".format(round(mode2_ans, 2)), anchor=tk.NE)
             output_labe2.grid(column=0, row=1, sticky=self.align_mode)
 
         elif mode == 3:
